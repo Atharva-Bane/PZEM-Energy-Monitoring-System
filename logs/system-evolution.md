@@ -8,7 +8,7 @@ This document captures how the project evolved from initial concept to final imp
 
 The project started as an IoT-based energy monitoring system with the following planned architecture:
 
-PZEM → ESP32 → Raspberry Pi → Web Dashboard
+PZEM → ESP32 → Raspberry Pi → Node-Red 
 
 The Raspberry Pi was intended to handle backend processing, download broker in it for MQTT connection.
 
@@ -27,20 +27,40 @@ Also if you are an IPhone user, it won't connect at all. Use WiFi hotspot of an 
 * Difficulty maintaining consistent communication
 
 ---
+## Transition from Node-RED to Custom Stack
 
-## Major Design Pivot
+### Initial Approach
 
-Due to reliability concerns, the architecture was redesigned.
-
-### Decision:
-
-Remove Raspberry Pi entirely and shift to a fully ESP32-based system.
+During early development, Node-RED was considered for visualizing and handling data due to its simplicity and rapid setup.
 
 ---
 
-## Updated Architecture
+### Limitation
+
+While Node-RED allowed quick prototyping, it had limitations:
+
+* Less flexibility in UI customization
+* Limited control over data handling and scaling
+* Not ideal for building a fully customized application
+
+---
+
+### Design Decision
+
+To gain better control and scalability, the system was redesigned using:
+
+* Node.js for backend processing
+* React for frontend visualization
+
+Also Remove Raspberry Pi entirely and shift to a fully ESP32-based system.
+
+---
+
+## Revised Concept
+
 
 ESP32 → MQTT Broker (Mosquitto) → Node.js → React Frontend
+Mosquitto, Node.js (backend), React (frontend) were installed on Laptop.
 
 ---
 
