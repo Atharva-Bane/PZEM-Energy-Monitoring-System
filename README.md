@@ -1,6 +1,6 @@
 # PZEM-Energy-Monitoring-System
 IoT-based real-time energy monitoring system using ESP32, MQTT, and web dashboard
-# ⚡ PZEM Energy Monitoring System
+# PZEM Energy Monitoring System
 
 An end-to-end IoT-based real-time energy monitoring and control system built using ESP32, MQTT, Node.js, and a React web dashboard.
 
